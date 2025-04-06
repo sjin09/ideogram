@@ -1,0 +1,10 @@
+name: ideogram
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  - python=3.9
+  - pip
+  - pip:
+    - poetry>=1.0.0

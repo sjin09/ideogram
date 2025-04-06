@@ -1,0 +1,45 @@
+[tool.poetry]
+name = "ideogram"
+version = "0.0.1"
+description = "Generate ideograms"
+authors = ["Sangjin Lee <sjinlee.bioinformatics09@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+homepage = "https://github.com/sjin09/ideogram"
+repository = "https://github.com/sjin09/ideogram"
+
+[tool.poetry.urls]
+Changelog = "https://github.com/sjin09/ideogram/releases"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+svglib = "^1.5.1"
+
+[tool.poetry.dev-dependencies]
+flake8 = { version = "^6.1" }
+black = { version = "^23.10" }
+pytest = { version = "^7.4.3" }
+
+[tool.poetry.extras]
+dev = ["flake8", "black", "pytest"]
+
+[tool.poetry.scripts]
+ideogram = "ideogram.__main__:main"
+
+[tool.coverage.paths]
+source = ["src", "*/site-packages"]
+
+[tool.coverage.run]
+branch = true
+source = ["himut"]
+
+[tool.coverage.report]
+show_missing = true
+fail_under = 100
+
+[tool.black]
+line-length = 120
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
